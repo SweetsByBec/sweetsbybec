@@ -1,0 +1,390 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Sweets By Bec</title>
+    <meta name="description" content="Handmade sweets by Bec — cupcakes, cakes, cookies, and custom orders." />
+
+    <!-- Fonts: swap with hosted fonts if preferred -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap"
+        rel="stylesheet">
+
+    <style>
+        /* Palette: Peach & Cream (Rustic Elegance) */
+        :root {
+            --cream: #FBF6F0;
+            --peach: #EAAE95;
+            --peach-deep: #D4876F;
+            --choc: #6B4B3A;
+            --muted: #EDE4DD;
+            --radius: 14px;
+            --max-w: 1100px;
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        body {
+            margin: 0;
+            font-family: "Montserrat", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+            background: var(--cream);
+            color: var(--choc);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            line-height: 1.45;
+            padding: 28px 16px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .wrap {
+            width: 100%;
+            max-width: var(--max-w);
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            padding: 10px 6px;
+        }
+
+        .logo {
+            font-family: "Playfair Display", serif;
+            font-size: 28px;
+            color: var(--choc);
+            letter-spacing: 0.6px;
+        }
+
+        .tag {
+            font-size: 12px;
+            color: var(--peach-deep);
+            margin-top: 4px
+        }
+
+        nav {
+            display: flex;
+            gap: 18px;
+            align-items: center
+        }
+
+        nav a {
+            color: var(--choc);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px
+        }
+
+        /* Hero */
+        .hero {
+            margin-top: 12px;
+            border-radius: var(--radius);
+            overflow: hidden;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6));
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+        }
+
+        .hero .media {
+            background: url('/assets/hero.jpg') center/cover no-repeat;
+            /* replace with real hero */
+            height: 360px;
+            display: flex;
+            align-items: flex-end;
+            padding: 28px;
+        }
+
+        .ctabox {
+            background: rgba(255, 255, 255, 0.85);
+            padding: 12px 18px;
+            border-radius: 10px;
+            display: inline-block;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            background: var(--peach);
+            color: white;
+            padding: 10px 16px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            margin-top: 8px;
+        }
+
+        /* Featured grid */
+        .section {
+            padding: 36px 6px
+        }
+
+        .section h2 {
+            text-align: center;
+            letter-spacing: 1px;
+            font-size: 20px;
+            margin: 0 0 22px;
+            font-weight: 700;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+            align-items: start;
+        }
+
+        .card {
+            background: var(--muted);
+            padding: 12px;
+            border-radius: 12px;
+            box-shadow: 0 8px 14px rgba(0, 0, 0, 0.04);
+            text-align: center;
+        }
+
+        .card img {
+            width: 100%;
+            height: 140px;
+            object-fit: cover;
+            border-radius: 8px
+        }
+
+        .card h3 {
+            margin: 10px 0 6px;
+            font-size: 16px;
+            color: var(--choc)
+        }
+
+        .card p {
+            margin: 0;
+            font-size: 13px;
+            color: #6b584f
+        }
+
+        .card .order {
+            margin-top: 10px;
+            display: inline-block;
+            padding: 8px 12px;
+            background: transparent;
+            border: 2px solid var(--peach);
+            border-radius: 10px;
+            color: var(--peach-deep);
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        /* About block */
+        .about {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            background: linear-gradient(90deg, rgba(234, 174, 149, 0.06), rgba(255, 255, 255, 0));
+            padding: 18px;
+            border-radius: 14px;
+        }
+
+        .about img {
+            width: 200px;
+            height: 140px;
+            object-fit: cover;
+            border-radius: 12px;
+            border: 6px solid rgba(255, 255, 255, 0.6)
+        }
+
+        .about .bio h3 {
+            margin: 0;
+            font-family: "Playfair Display", serif
+        }
+
+        /* Footer */
+        footer {
+            padding: 20px 6px;
+            text-align: center;
+            font-size: 13px;
+            color: #8b6b5b
+        }
+
+        /* Responsive */
+        @media (max-width:900px) {
+            .cards {
+                grid-template-columns: repeat(2, 1fr)
+            }
+
+            .hero .media {
+                height: 280px
+            }
+
+            .about {
+                flex-direction: column;
+                text-align: center
+            }
+        }
+
+        @media (max-width:520px) {
+            nav {
+                display: none
+            }
+
+            /* swap for simple hamburger if desired */
+            .cards {
+                grid-template-columns: 1fr
+            }
+
+            .hero .media {
+                height: 220px
+            }
+
+            .logo {
+                font-size: 22px
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <header>
+            <div>
+                <div class="logo">Sweets By Bec</div>
+                <div class="tag">Baking happiness, one bite at a time</div>
+            </div>
+
+            <nav aria-label="Main Navigation">
+                <a href="#home">Home</a>
+                <a href="#menu">Menu</a>
+                <a href="#about">About</a>
+                <a href="#gallery">Gallery</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </header>
+
+        <!-- HERO -->
+        <main>
+            <section class="hero" id="home" aria-label="Hero">
+                <div class="media" role="img" aria-hidden="true">
+                    <div class="ctabox">
+                        <div style="font-weight:700;font-size:20px;color:var(--choc)">Freshly baked. Always handmade.
+                        </div>
+                        <div style="font-size:13px;color:#7a5b4d;margin-top:6px">Seasonal flavors — small batches.</div>
+                        <a class="cta-btn" href="#menu">View Our Menu</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Featured products -->
+            <section class="section" id="menu" aria-label="Menu">
+                <h2>Our Handmade Favorites</h2>
+                <div class="cards">
+                    <!-- Repeat cards - replace images/text/prices -->
+                    <article class="card">
+                        <img src="/assets/cupcakes.jpg" alt="Cupcakes by Bec">
+                        <h3>Cupcakes</h3>
+                        <p>Vanilla bean, salted caramel, rotating seasonal flavors.</p>
+                        <!-- To add e-commerce: give this anchor data attributes required by your cart provider -->
+                        <a class="order" href="#order" onclick="openOrder('Cupcakes')">Order</a>
+                    </article>
+
+                    <article class="card">
+                        <img src="/assets/layercake.jpg" alt="Layer cakes">
+                        <h3>Layer Cakes</h3>
+                        <p>Custom sizes and designs for events.</p>
+                        <a class="order" href="#order" onclick="openOrder('Layer Cake')">Order</a>
+                    </article>
+
+                    <article class="card">
+                        <img src="/assets/brownies.jpg" alt="Brownies">
+                        <h3>Brownies</h3>
+                        <p>Fudgy, chocolate-forward, sometimes topped with sea salt.</p>
+                        <a class="order" href="#order" onclick="openOrder('Brownies')">Order</a>
+                    </article>
+
+                    <article class="card">
+                        <img src="/assets/cookies.jpg" alt="Cookies">
+                        <h3>Cookies</h3>
+                        <p>Classic chocolate chip, snickerdoodle, and seasonal specials.</p>
+                        <a class="order" href="#order" onclick="openOrder('Cookies')">Order</a>
+                    </article>
+                </div>
+            </section>
+
+            <!-- About -->
+            <section class="section" id="about">
+                <h2>About the Baker</h2>
+                <div class="about">
+                    <img src="/assets/bec-portrait.jpg" alt="Bec baking in the kitchen">
+                    <div class="bio">
+                        <h3>Meet Bec</h3>
+                        <p style="margin-top:8px;color:#6b584f">
+                            Sweet’s By Bec started as a kitchen experiment and grew into a small local favorite —
+                            handcrafted treats, seasonal ingredients, and custom cakes for life's moments.
+                        </p>
+                        <p style="margin-top:10px;font-weight:700;color:var(--peach-deep)">Note: accepts custom orders &
+                            local pickups</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Simple Order Modal (client-side placeholder) -->
+            <section class="section" id="contact">
+                <h2>Contact / Custom Orders</h2>
+                <p style="text-align:center;color:#6b584f">Use this form for custom orders, pickup scheduling, or event
+                    inquiries.</p>
+
+                <form id="orderForm"
+                    style="max-width:720px;margin:18px auto;background:var(--muted);padding:18px;border-radius:12px;">
+                    <label style="display:block;margin-bottom:8px">Name<input required name="name"
+                            placeholder="Your name"
+                            style="width:100%;padding:10px;margin-top:6px;border-radius:8px;border:1px solid #e6dcd3"></label>
+
+                    <label style="display:block;margin:10px 0">Email<input required type="email" name="email"
+                            placeholder="you@mail.com"
+                            style="width:100%;padding:10px;margin-top:6px;border-radius:8px;border:1px solid #e6dcd3"></label>
+
+                    <label style="display:block;margin:10px 0">Order details<textarea name="details"
+                            placeholder="What do you want? date needed, quantity, flavors..."
+                            style="width:100%;min-height:110px;padding:10px;border-radius:8px;border:1px solid #e6dcd3"></textarea></label>
+
+                    <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end">
+                        <button type="reset"
+                            style="padding:10px 14px;border-radius:10px;border:1px solid #d6c2b8;background:transparent">Reset</button>
+                        <button type="submit"
+                            style="padding:10px 14px;border-radius:10px;border:0;background:var(--peach-deep);color:white;font-weight:700">Send
+                            Inquiry</button>
+                    </div>
+
+                    <!-- NOTE: connect this form to Formspree / Netlify Forms / Email service in production -->
+                </form>
+            </section>
+        </main>
+
+        <footer>
+            © <span id="year"></span> Sweets By Bec — handcrafted treats. Follow us on Instagram @sweetsbybec
+        </footer>
+    </div>
+
+    <script>
+        // small interactive helpers
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        function openOrder(item) {
+            // quick UX: prefill the order form; in production you'd open a modal or route to full product page
+            const form = document.getElementById('orderForm');
+            form.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            form.querySelector('[name="details"]').value = `I'd like to order: ${item} — Quantity: ____ ; Date needed: ____`;
+        }
+
+        // Handle form submit (placeholder)
+        document.getElementById('orderForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            // Replace with real submit integration:
+            // Option A: POST to Formspree (change action attr, remove JS)
+            // Option B: Netlify forms (add data-netlify="true")
+            alert('Thanks — inquiry sent! (This is a demo. Wire up Formspree/Netlify or backend.)');
+            e.target.reset();
+        });
+    </script>
+</body>
+
+</html>
